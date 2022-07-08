@@ -1,0 +1,20 @@
+{%block content%}
+<h1>Dns data </h1>
+<div class="comment-form">
+         <form method="post" action="">
+        {%csrf_token%}
+         <input type="text" name="body" placeholder="write your comment here"/>
+      </form>
+     </div>
+
+  {%for message in message%}
+        <div>
+         <h1> mx_record {{message.body}} </h1>
+         <h2> Ip {{message.ip}} </h2>
+         <h3> txt_record {{message.txt}} </h3>
+         <h1> cname {{message.cname}} </h1>
+         </div>
+          <hr>
+     {%endfor%}
+
+{%endblock%}
